@@ -7,7 +7,7 @@ Summary:	Python parser for fastimport (VCS interchange format)
 Summary(pl.UTF-8):	Pythonowy parser formatu fastimport (do wymiany VCS)
 Name:		python3-%{module}
 Version:	0.9.14
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/project/simple/
