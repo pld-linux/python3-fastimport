@@ -7,7 +7,7 @@ Summary:	Python parser for fastimport (VCS interchange format)
 Summary(pl.UTF-8):	Pythonowy parser formatu fastimport (do wymiany VCS)
 Name:		python3-%{module}
 Version:	0.9.14
-Release:	5
+Release:	6
 License:	GPL v2+
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/project/simple/
@@ -16,7 +16,6 @@ Source0:	https://files.pythonhosted.org/packages/source/f/fastimport/%{module}-%
 URL:		https://pypi.org/project/fastimport/
 BuildRequires:	python3-modules >= 1:3.6
 %if %{with tests}
-BuildRequires:	python3-nose
 %endif
 BuildRequires:	rpmbuild(macros) >= 1.714
 BuildArch:	noarch
@@ -38,7 +37,7 @@ przez inne projekty.
 %py3_build
 
 %if %{with tests}
-nosetests-%{py3_ver} fastimport
+%{__python3} -m unittest fastimport.tests.test_suite
 %endif
 
 %install
