@@ -1,0 +1,13 @@
+# helpers.defines_to_dict() returns "" (was 1) for -Cname, so query showed no fields instead of all
+diff -urN qa/fastimport/processors/query_processor.py qb/fastimport/processors/query_processor.py
+--- fastimport-0.9.16.orig/fastimport/processors/query_processor.py	2026-11-12 01:53:09.513333333 +0100
++++ fastimport-0.9.16/fastimport/processors/query_processor.py	2026-11-12 01:53:15.575550463 +0100
+@@ -51,7 +51,7 @@
+                 )
+                 del params[b"commit-mark"]
+             for name, value in params.items():
+-                if value == 1:
++                if value == 1 or value == "":
+                     # All fields
+                     fields = None
+                 else:
